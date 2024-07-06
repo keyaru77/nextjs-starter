@@ -12,7 +12,7 @@ async function getArticles(): Promise<Article[]> {
   const data = await res.json();
   return data.articles;
 }
-
+ 
 export default async function HomeContent() {
   const articles = await getArticles();
   return <HomeContentPage articles={articles} />;
