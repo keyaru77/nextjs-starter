@@ -1,17 +1,17 @@
 import type { Metadata } from 'next';
 
-const title = 'kya | nextjs-starter';
+const title = 'Kyaa | nextjs-starter';
 
 export const metadata: Metadata = {
   title: title,
 };
 
-const Kya = () => {
+const Kyaa = () => {
   return (
     <div className="flex">
-      <div className="text-3xl font-bold">Kyahh</div>
+      <div className="text-3xl font-bold">About</div>
     </div>
   );
 };
 
-export default Kya;
+export default Kyaa;
