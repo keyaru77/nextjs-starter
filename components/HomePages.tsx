@@ -12,7 +12,7 @@ interface HomePageProps {
   articles: Article[];
 }
 
-const HomePage: React.FC<HomePageProps> = ({ articles }) => {
+const HomePages: React.FC<HomePageProps> = ({ articles }) => {
   return (
     <div className="flex flex-col">
       <h1 className="text-3xl font-bold">Articles</h1>
@@ -32,4 +32,4 @@ const HomePage: React.FC<HomePageProps> = ({ articles }) => {
   );
 };
 
-export default HomePage;
+export default HomePages;
