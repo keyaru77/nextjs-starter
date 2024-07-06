@@ -1,6 +1,6 @@
 // pages/home.tsx
 import { GetServerSideProps } from 'next';
-import HomePage from '../components/HomePage'; // Assuming you put HomePage component in components directory
+import HomePage from '../components/HomePages'; // Assuming you put HomePage component in components directory
 
 interface Article {
   link: string;
@@ -26,7 +26,7 @@ export const getServerSideProps: GetServerSideProps = async () => {
 };
 
 const Home = ({ articles }: HomeProps) => {
-  return <HomePage articles={articles} />;
+  return <HomePages articles={articles} />;
 };
 
 export default Home;
