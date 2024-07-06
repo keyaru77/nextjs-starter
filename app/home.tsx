@@ -1,32 +1,19 @@
-// pages/home.tsx
-import { GetServerSideProps } from 'next';
-import HomePage from '../components/HomePages'; // Assuming you put HomePage component in components directory
+import type { Metadata } from 'next';
+import HomeContentPage, { Article } from './HomeContentPage';
 
-interface Article {
-  link: string;
-  typez: string;
-  title: string;
-  img: string;
-}
+const title = 'Home Content | nextjs-starter';
 
-interface HomeProps {
-  articles: Article[];
-}
+export const metadata: Metadata = {
+  title: title,
+};
 
-export const getServerSideProps: GetServerSideProps = async () => {
+async function getArticles(): Promise<Article[]> {
   const res = await fetch('https://cuy-api.vercel.app/v1/home');
   const data = await res.json();
-  const articles: Article[] = data.articles;
+  return data.articles;
+}
 
-  return {
-    props: {
-      articles,
-    },
-  };
-};
-
-const Home = ({ articles }: HomeProps) => {
-  return <HomePages articles={articles} />;
-};
-
-export default Home;
+export default async function HomeContent() {
+  const articles = await getArticles();
+  return <HomeContentPage articles={articles} />;
+}
